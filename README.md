@@ -4,3 +4,5 @@ Here's the summary.
 More details.
 
 ## New Section
+
+## New Section 2
