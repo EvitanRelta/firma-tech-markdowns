@@ -17,8 +17,12 @@ Improved upon AndrewCarterUK's pascal-voc-writer. (Link: <https://github.com/And
 ### For a single image
 > ###### [back to Contents](https://github.com/EvitanRelta/git_tutorial#Table-of-Contents)
 
+<details>
+<summary>
 <blockquote><h6><a href="#Table-of-Contents">back to Contents</a></h6></blockquote>
-
+<h2>Example</h2>
+</summary>
+</details>
 
 <details>
   <summary>Write annotation for <code>myImage.png</code> _(width: 100, height: 150)_ :</summary>
