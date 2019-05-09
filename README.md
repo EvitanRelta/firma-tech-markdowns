@@ -1,16 +1,13 @@
-# Test Repo for Learning Git
+# Polygon Pascal VOC Writer
 
-Here's the summary.
-More details.
+A simple python module to generate Pascal VOC xml annotation files. Currently only supports boundingBoxes and polygons.
 
-## New Section
+Improved upon AndrewCarterUK's pascal-voc-writer. (Link: <https://github.com/AndrewCarterUK/pascal-voc-writer>)
 
-## New Section 2
+## Table of Contents
 
-Description.
-
-## Todo
-
-## Usage
-
-Details.
+>- [Polygon Pascal VOC Writer](#Polygon-Pascal-VOC-Writer)
+>- [Table of Contents](#Table-of-Contents)
+>- [Example Execution](#Example-Execution)
+>   - [For a single image](#For-a-single-image)
+>   - [For a folder of images](#For-a-folder-of-images)
