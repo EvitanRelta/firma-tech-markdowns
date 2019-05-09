@@ -12,31 +12,126 @@ Improved upon AndrewCarterUK's pascal-voc-writer. (Link: <https://github.com/And
 >   - [For a single image](https://github.com/EvitanRelta/git_tutorial/blob/master/example.md#For-a-single-image)
 >   - [For a folder of images](https://github.com/EvitanRelta/git_tutorial/blob/master/example.md#For-a-folder-of-images)
 
-source: [https://gist.github.com/pierrejoubert73/902cc94d79424356a8d20be2b382e1ab]
+## Example Execution
 
-<details open>
-<summary id='Example-Execuasdtion'><strong>Example Execution</strong></summary>
-
-<p>...</p>
-</details>  
+### For a single image
+> ###### [back to **_Contents_**](https://github.com/EvitanRelta/git_tutorial#Table-of-Contents)
 
 <details>
-<summary id='Example-Executiasdon'><b>Example Execution<b></summary>
+  <summary>Write annotation for <code>myImage.png</code> _(width: 100, height: 150)_ :</summary>
+  
+  ```python
+images_dir = r"dir\images\"
+annotations_dir = r"dir\annotations\"
+image_name = "myImage.png"
+writer = VocWriter(images_dir, annotations_dir, image_name)
 
-## Example Execution
-</details>  
+box_name = "myLabelBox"
+xmin, ymin, xmax, ymax = 1, 2, 3, 4
+writer.addBndBox(box_name, xmin, ymin, xmax, ymax)
+
+polygon_name = "myPolygon"
+vertices = [
+    [1, 2],
+    [3, 4],
+    [5, 6]
+]
+writer.addPolygon("myPolygon", vertices)
+
+writer.save()
+```
 
 <br>
 
-<br>
+Output file, `dir\annotation\myImage.xml` :
+
+```xml
+<annotation>
+    <folder>images</folder>    
+    <filename>myImage.png</filename>
+    <path>dir\images\myImage.png</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>100</width>
+        <height>150</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>myLabelBox</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1</xmin>
+            <ymin>2</ymin>
+            <xmax>3</xmax>
+            <ymax>4</ymax>
+        </bndbox>
+    </object>
+    <object>
+        <name>myPolygon</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <polygon>
+            <x1>1</x1>
+            <y1>2</y1>
+            <x2>3</x2>
+            <y2>4</y2>
+            <x3>5</x3>
+            <y3>6</y3>
+        </polygon>
+        <bndbox>
+            <xmin>1</xmin>
+            <ymin>2</ymin>
+            <xmax>5</xmax>
+            <ymax>6</ymax>
+        </bndbox>
+    </object>
+</annotation>
+```
+  
+</details>
 
 <br>
 
-<font color='red'>H1</font>
-<font size="+1">Description</font>
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
+### For a folder of images
+> ###### [back to **_Contents_**](https://github.com/EvitanRelta/git_tutorial#Table-of-Contents)
+
+<details>
+  <summary>Write annotation for <code>image1.png</code> and <code>image2.png</code> :</summary>
+
+```python
+images_dir = r"dir\images\"
+annotations_dir = r"dir\annotations\"
+writer = VocWriter(images_dir, annotations_dir, "")
+
+list_of_annotations = [
+    {"image_name" : "image1.png",
+     "polygon" : [[1, 2], [3, 4], [5, 6]]},
+    {"image_name" : "image2.png",
+     "polygon" : [[7, 8], [9, 10], [11, 12]]}
+]
+for annotation in list_of_annotations:
+    writer.nextImage(annotation["image_name"])
+    writer.addPolygon("polygon_name", annotation["polygon"])
+    writer.save()
+```
+
+<br>
+
+Resulting directories: 
+```
+dir
+├── images
+|   ├── image1.png
+|   └── image2.png
+└── annotations
+    ├── image1.xml
+    ├── image2.xml
+```
+
+</details>
