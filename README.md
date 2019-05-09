@@ -15,7 +15,7 @@ Improved upon AndrewCarterUK's pascal-voc-writer. (Link: <https://github.com/And
 source: [https://gist.github.com/pierrejoubert73/902cc94d79424356a8d20be2b382e1ab]
 
 <details open>
-<summary title='Example Execution'>Example Execution</summary>
+<summary id='Example-Execution'>Example Execution</summary>
 
 <p>...</p>
 </details>  
