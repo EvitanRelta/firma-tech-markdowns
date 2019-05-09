@@ -8,7 +8,7 @@ Improved upon AndrewCarterUK's pascal-voc-writer. (Link: <https://github.com/And
 
 >- [Polygon Pascal VOC Writer](#Polygon-Pascal-VOC-Writer)
 >- [Table of Contents](#Table-of-Contents)
->- [Example Execution](https://github.com/EvitanRelta/git_tutorial/blob/master/example.md#Example-Execution)
+>- [Example Execution](#Example-Execution)
 >   - [For a single image](https://github.com/EvitanRelta/git_tutorial/blob/master/example.md#For-a-single-image)
 >   - [For a folder of images](https://github.com/EvitanRelta/git_tutorial/blob/master/example.md#For-a-folder-of-images)
 
@@ -21,7 +21,7 @@ source: [https://gist.github.com/pierrejoubert73/902cc94d79424356a8d20be2b382e1a
 </details>  
 
 <details>
-  <summary>Click to expand!</summary>
+  <summary style="display:inline"><h2 style="display: inline;">Kevin Smith</h2></summary>
   
   ## Heading
   1. A numbered
