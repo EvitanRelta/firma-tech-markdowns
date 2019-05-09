@@ -19,7 +19,7 @@ Improved upon AndrewCarterUK's pascal-voc-writer. (Link: <https://github.com/And
 
 <details>
 <summary>
-<sub><a href="#Table-of-Contents"><strong>back to Contents</strong></a></sub>
+<a href="#Table-of-Contents"><strong>back to Contents</strong></a>
 <h2>Example</h2>
 </summary>
 </details>
