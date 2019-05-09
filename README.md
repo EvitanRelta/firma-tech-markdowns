@@ -20,7 +20,7 @@ source: [https://gist.github.com/pierrejoubert73/902cc94d79424356a8d20be2b382e1a
 <p>...</p>
 </details>  
 
-<details open>
+<details>
 <summary id='Example-Executiasdon'><b>Example Execution<b></summary>
 
 ## Example Execution
