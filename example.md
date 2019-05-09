@@ -1,7 +1,7 @@
 ## Example Execution
 
 ### For a single image
-> ###### [back to **_Contents_**](#Table-of-Contents)
+> ###### [back to **_Contents_**](https://github.com/EvitanRelta/polygon-pascalvoc-writer#Table-of-Contents)
 
 Write annotation for `myImage.png` _(width: 100, height: 150)_ :
 
@@ -82,7 +82,7 @@ Output file, `dir\annotation\myImage.xml` :
 <br>
 
 ### For a folder of images
-> ###### [back to **_Contents_**](#Table-of-Contents)
+> ###### [back to **_Contents_**](https://github.com/EvitanRelta/polygon-pascalvoc-writer#Table-of-Contents)
 
 Write annotation for `image1.png` and `image2.png` :
 ```python
