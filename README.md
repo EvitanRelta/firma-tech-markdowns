@@ -21,13 +21,8 @@ source: [https://gist.github.com/pierrejoubert73/902cc94d79424356a8d20be2b382e1a
 </details>  
 
 <details>
-  <summary style="display:inline"><h2 style="display: inline;">Kevin Smith</h2></summary>
-  
-  ## Heading
-  1. A numbered
-  2. list
-     * With some
-     * Sub bullets
+  <summary style="display:inline"><h2 style="display:inline">Copyright 1999-2018</h2></summary>
+  hello
 </details>
 
 <details open>
@@ -35,3 +30,5 @@ source: [https://gist.github.com/pierrejoubert73/902cc94d79424356a8d20be2b382e1a
 
 <p>...</p>
 </details>  
+
+`<xml attrib="someVal"></xml>`{:.language-xml}
