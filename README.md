@@ -15,7 +15,7 @@ Improved upon AndrewCarterUK's pascal-voc-writer. (Link: <https://github.com/And
 ## Example Execution
 
 ### For a single image
-> ###### [back to **_Contents_**](https://github.com/EvitanRelta/git_tutorial#Table-of-Contents)
+> ###### [back to _Contents_](https://github.com/EvitanRelta/git_tutorial#Table-of-Contents)
 
 <blockquote><h6><a href="#Table-of-Contents">back to <strong><em>Contents<em><strong></a></h6></blockquote>
 
