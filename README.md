@@ -20,15 +20,18 @@ source: [https://gist.github.com/pierrejoubert73/902cc94d79424356a8d20be2b382e1a
 <p>...</p>
 </details>  
 
-<details>
-  <summary style="display:inline"><h2 style="display:inline">Copyright 1999-2018</h2></summary>
-  hello
-</details>
 
-<details open>
-<summary title='Example-Execution'>Example Execution</summary>
+<br>
 
-<p>...</p>
-</details>  
+<br>
 
-`<xml attrib="someVal"></xml>`{:.language-xml}
+<br>
+
+<font color='red'>H1</font>
+<font size="+1">Description</font>
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
