@@ -31,20 +31,17 @@
 <br>
 
 # Setting up
-## Step 1: Getting Google Cloud credentials
-> ###### [back to Contents](#Table-of-Contents)
+## Step 1: Getting Google Cloud credentials <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 
 
 
-## Step 2: Configuration
-> ###### [back to Contents](#Table-of-Contents)
+## Step 2: Configuration <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 
 In the `configs` folder, edit the `CONFIG_credentials.js` and `CONFIG_modelInfo.js` files. 
 
 <br>
 
-### For `CONFIG_credentials.js`
-> ###### [back to Contents](#Table-of-Contents)
+### For `CONFIG_credentials.js` <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 
 This contains the Google Cloud credentials used to get the predictions from Google Cloud ML.
 
@@ -53,8 +50,7 @@ This contains the Google Cloud credentials used to get the predictions from Goog
 
 <br>
 
-### For `CONFIG_modelInfo.js`
-> ###### [back to Contents](#Table-of-Contents)
+### For `CONFIG_modelInfo.js` <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 
 This contains the details of the Google Cloud ML models, and the desired display names for the models on the HTML page.
 
@@ -160,8 +156,7 @@ This contains the details of the Google Cloud ML models, and the desired display
 
 <br>
 
-## Step 3: Hosting the website
-> ###### [back to Contents](#Table-of-Contents)
+## Step 3: Hosting the website <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 
 This repo/project is a static website, and thus can be easily hosted online without any server. _(such as on [Google Drive](https://www.process.st/how-to-host-a-website-on-google-drive-for-free/) or [AWS S3](https://medium.com/@kyle.galbraith/how-to-host-a-website-on-s3-without-getting-lost-in-the-sea-e2b82aa6cd38))_
 
@@ -171,8 +166,7 @@ It does, however, rely on a [_modified_ CORS-Anywhere proxy](https://github.com/
 
 <br>
 
-# Dependencies
-> ###### [back to Contents](#Table-of-Contents)
+# Dependencies <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 
 - [jsrsasign library](https://kjur.github.io/jsrsasign) - for JSON Web Signature (JWS) sigining, to get the Google Cloud access token using the credentials in `/configs/CONFIG_credentials.js`<br><br>
 - [Font Awesome 4.7.0 (CSS file)](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css) - style for the top navigation bar; taken from [W3Schools - Responsive Top Navigation](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp)<br><blockquote>**Note:** Font Awesome is "fully open source and is GPL friendly". [Here's its license.](https://fontawesome.com/v4.7.0/license/)</blockquote>
@@ -181,8 +175,7 @@ It does, however, rely on a [_modified_ CORS-Anywhere proxy](https://github.com/
 
 <br>
 
-# Author
-> ###### [back to Contents](#Table-of-Contents)
+# Author <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 
 - Shaun Tan - _"Hi"_
 
