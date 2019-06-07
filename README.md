@@ -18,11 +18,11 @@
 
 ## Table of Contents
 > - [Setting up](#Setting-up)
->   - [Step 1: Getting Google Cloud credentials](#Step-1:-Getting-Google-Cloud-credentials)
->   - [Step 2: Configuration](#Step-2:-Configuration)
+>   - [Step 1: Getting Google Cloud credentials](#Step-1-Getting-Google-Cloud-credentials)
+>   - [Step 2: Configuration](#Step-2-Configuration)
 >     - [For `CONFIG_credentials.js`](#For-CONFIG_credentials.js)
 >     - [For `CONFIG_modelInfo.js`](#For-CONFIG_modelInfo.js)
->   - [Step 3: Hosting the website](#Step-3:-Hosting-the-website)
+>   - [Step 3: Hosting the website](#Step-3-Hosting-the-website)
 > - [Dependencies](#Dependencies)
 > - [Author](#Author)
 
