@@ -28,6 +28,8 @@ Specifically, it populates the top-navigation-bar container _(`<div class="topna
 </p>
 
 <br>
+<hr>
+<hr>
 
 # `configs` folder
 > Contains configuration files.
@@ -37,7 +39,7 @@ Specifically, it populates the top-navigation-bar container _(`<div class="topna
 ## `CONFIG_credentials.js`
 > Contains the const `credentials` (type:`dict`), which contains the Google Cloud credentials.
 
-This project requires the credentials of a service account that has permissions to request for predictions. _(specifically `ml.models.predict` and `ml.versions.predict` as documented in [README.md - Setting up > Step 1: Getting Google Cloud credentials](README.md#readme-permissions))_
+This project requires the credentials of a service account that has permissions to request for predictions. _(specifically `ml.models.predict` and `ml.versions.predict` as documented in [README.md — Setting up > Step 1: Getting Google Cloud credentials](README.md#readme-permissions))_
 <br>Credentials can be obtained via: <a href='https://console.cloud.google.com/apis/credentials'>https://console.cloud.google.com/apis/credentials</a>
 <br>[(Detailed instructions found in `README.md`)](README.md#Step-1-Getting-Google-Cloud-credentials-back-to-contents)
 
@@ -66,6 +68,7 @@ To configure, change the key valves of `credentials` (type:`dict`) to that in yo
 `privateKey`|`private_key`|`-----BEGIN PRIVATE KEY-----\nAbCdE...fGhIj\n-----END PRIVATE KEY-----\n`
 
 <br>
+<hr>
 
 ## `CONFIG_modelInfo.js`
 <blockquote>
@@ -182,6 +185,7 @@ To configure, insert `dict` objects into `modelInfo` (type:`array` of `dict`) wi
 </table>
 
 <br>
+<hr>
 
 ## `CONFIG_misc.js`
 > Miscellaneous configurables.
@@ -206,18 +210,39 @@ Similar to [`labelMap`](#modelInfo-labelMap) in `modelInfo` in `CONFIG_modelInfo
 <br>
 
 ### `corsProxy` (type:`str`)
-> Contains the CORS-Anywhere proxy URL.
+> Contains the modified CORS-Anywhere proxy URL.
 
-Refer to [googleApiFunctions](TODO) for info on what it's used for.
+The modified CORS-Anywhere proxy is used to bypass CORS-restrictions, and to allow setting of restricted HTTP headers. This is to spoof Google Cloud ML into accept a prediction request from an unauthorised website.
 
-Refer to [README.md - Setting up > Step 3: Hosting the website](README.md#Step-3-Hosting-the-website-back-to-contents) TODOcheckIfWorks for info on how to set up a new proxy, should the proxy go down.
+Refer to [googleApiFunctions.js > getPrediction > sendPayload](#corsproxy-usage) for info on how its used.
+
+Refer to [README.md — Setting up > Step 3: Hosting the website](README.md#Step-3-Hosting-the-website-back-to-contents) TODOcheckIfWorks for info on how to set up a new proxy, should the current proxy go down.
 
 <br>
+<hr>
+<hr>
 
 # `functions` folder
 > Contains all the project's functions, which are split into multiple JavaScript modules.
 
 <br>
+
+## `upload.js`
+
+
+<br>
+
+### Misc. functions in `upload.js`
+#### getByteSize(str)
+> Same as the [getByteSize](TODO) in `googleApiFunctions.js`.
+
+<br>
+
+#### isValidInput(inputElement)
+> Checks if the user-uploaded file has an extension thats found in [`acceptedFileExts`](TODO) _(in `CONFIG_misc.js`)_.
+
+<br>
+<hr>
 
 ## `googleApiFunctions.js`
 > Contains the function that interact with the Google Cloud service, including:
@@ -227,7 +252,7 @@ Refer to [README.md - Setting up > Step 3: Hosting the website](README.md#Step-3
 <br>
 
 ### getPrediction(pageDiv, model, imageData, callback)
-> Does the Google Cloud authentication, and sending of the image payload for prediction that was mentioned above.
+> Performs the Google Cloud authentication, and sending of the image payload for prediction that was mentioned above.
 
 Parameter | Description
 ---|---
@@ -239,10 +264,9 @@ callback | the callback function to return the prediction data from Google Cloud
 <br>
 
 ### Inner functions in `getPrediction`
+
 #### getToken(_callback)
 > Gets the short-lived _(lasts for 1h)_ access token needed to authenticate prediction requests.
-
-
 
 Google Cloud documentation on the general procedure to get access tokens  _(doesn't have documentation for pure JS)_: https://cloud.google.com/iot/docs/how-tos/credentials/jwts
 
@@ -256,26 +280,46 @@ The pure JavaScript implementation of above procedure _(that is used by this fun
 
 - sign it with `credentials.privateKey` to get a JSON Web Signature (JWS)
 
-- XHR post the JWS to the [OAuth 2.0 site](https://www.googleapis.com/oauth2/v3/token), which returns the access token
+- XHR post the JWS to the [OAuth 2.0 URL](https://www.googleapis.com/oauth2/v3/token), which returns the access token
 
 - return the access token to the callback function
 
 <br>
 
 #### sendPayload(token, _callback)
+> Gets the prediction data from Google Cloud ML model, by sending the access token _(returned from `getToken`)_ and the image data _(formatted by `getImageArray`)_.
+
+**What this function does:**
+
+- formats the image data into a stringified JSON payload
+
+- add fake headers to the `XMLHttpRequest` object spoof Google Cloud ML into accept a prediction request from an unauthorised website
+  - escaping the restricted headers _(ie. DNT, Origin, Referer, User-Agent)_ with a hyphen (-) prefix _(as client browsers disallow setting of these headers - [info](https://fetch.spec.whatwg.org/#forbidden-header-name))_
+
+- XHR post the image payload to the Google Cloud ML URL _via_ the modified CORS-Anywhere Proxy _(proxy URL configured in `corsProxy`)_
+
+  - <span id='corsproxy-usage'></span>the proxy will unescape the restricted headers, and bypass CORS-restrictions
+
+- Google Cloud ML will return the prediction data, and that data will be returned to the callback function  _(ie.  `_callback(errorMsg, predictionData)`)_ with `errorMsg` = `null`
+
+  - if any error occurs, the error message (type:`str`) will be returned in the callback's 1st parameter — `errorMsg` — and `null` for the 2nd parameter — `predictionData`
+ 
+
 
 > **_Misc. info_**
-<br>`xhrDict` is a dict of XMLHttpRequests(XHR) objects that are currently running, and that have not gotten a response/error yet.
-<br>**What it is for:** To ensure only 1 XHR is running per page; aborting the previous XHR of the page when the user uploads another image before the prediction data is returned from Google Cloud ML.
+<br>`xhrDict` is a dict of `XMLHttpRequests`(XHR) objects that are currently running, and that have not gotten a response/error yet.
+<br><br>**What it is for:** To ensure only 1 XHR is running per page; aborting the previous XHR of the page when the user uploads another image before the prediction data is returned from Google Cloud ML.
 <br>**Format:**<pre>{ PAGE_ID_1 : XMLHttpRequest_1,
 &nbsp;&nbsp;PAGE_ID_2 : XMLHttpRequest_2,
 &nbsp;&nbsp;... }</pre>
 where `PAGE_ID_n` is the `id` (type:`str`) of the page's `<div>` container
 <br>_(eg. id=`"page-solarpanel"` for `<div id='page-solarpanel'>`)_
 
-## Misc. functions in `googleApiFunctions.js`
-### setDictHeaders(xhr, dictHeader)
-> Set headers of a `XMLHttpRequest` object using a dictionary; instead of doing `XMLHttpRequest.setRequestHeader(header, value)` for every header.
+<br>
+
+### Misc. functions in `googleApiFunctions.js`
+#### setDictHeaders(xhr, dictHeader)
+> Set headers of a `XMLHttpRequest` object using a `dict`; instead of doing `XMLHttpRequest.setRequestHeader(header, value)` for every header.
 <table>
   <tr>
     <th>Parameter</th>
@@ -296,13 +340,19 @@ where `PAGE_ID_n` is the `id` (type:`str`) of the page's `<div>` container
   </tr>
 </table>
 
+<br>
+
 ### getByteSize(str)
 > Get byte size of the `str` (type:`str`); for determining if image payload size is over the Google Cloud ML's 157286 bytes limit.
+
+<br>
 
 ### commaFormat(floatOrInt)
 > Formats `floatOrInt` (type:`float`/`int`) to a string with commas at thousands places _(eg. 1000000.1 -> "1,000,000.1")_
 
 <br>
+<hr>
+<hr>
 
 
 # Glossary
@@ -311,3 +361,5 @@ Term | What I mean
 ---|---
 `tab` | <span id='glossary-tab'></span>a tab on the navigation bar<details><summary>Example</summary><blockquote><h3>Tab 1</h3><img src='readmeAssets/solarpanel_tab.png' width='300'><br><h3>Tab 2</h3><img src='readmeAssets/valve_tab.png' width='300'></blockquote></details>
 `page` | <span id='glossary-page'></span>a set of HTML elements that is shown when a tab is selected, denoated in the HTML by a container: `<div id='page-PAGE_NAME'>`<br>Every model has one page<details><summary>Example</summary><blockquote><h3>Page 1</h3><img src='readmeAssets/solarpanel_page.png' width='300'><br><h3>Page 2</h3><img src='readmeAssets/valve_page.png' width='300'></blockquote></details>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
