@@ -139,10 +139,10 @@ To configure, insert `dict` objects into `modelInfo` (type:`array` of `dict`) wi
     </td>
   </tr>
   <tr>
-    <td><code id='modelInfo-labelMap'>labelMap</code></td>
+    <td><code>labelMap</code></td>
     <td><code>array</code> of <code>strings</code></td>
     <td>
-      the prediction data returned from the model states the object class/type using an <code>int</code>. This <code>labelMap</code> maps that <code>int</code> to the name of the object.<br>
+      <span id='modelInfo-labelMap'></span>the prediction data returned from the model states the object class/type using an <code>int</code>. This <code>labelMap</code> maps that <code>int</code> to the name of the object.<br>
       <blockquote>
         <p>
           <b>Note:</b>
