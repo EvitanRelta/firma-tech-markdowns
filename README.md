@@ -37,7 +37,7 @@ Specifically, it populates the top-navigation-bar container _(`<div class="topna
 ## `CONFIG_credentials.js`
 > Contains the const `credentials` (type:`dict`), which contains the Google Cloud credentials.
 
-This project requires the credentials of a service account that has permissions to request for predictions. _(specifically `ml.models.predict` and `ml.versions.predict` as documented in [README.md](README.md#readme-permissions))_
+This project requires the credentials of a service account that has permissions to request for predictions. _(specifically `ml.models.predict` and `ml.versions.predict` as documented in [README.md - Setting up > Step 1: Getting Google Cloud credentials](README.md#readme-permissions))_
 <br>Credentials can be obtained via: <a href='https://console.cloud.google.com/apis/credentials'>https://console.cloud.google.com/apis/credentials</a>
 <br>[(Detailed instructions found in `README.md`)](README.md#Step-1-Getting-Google-Cloud-credentials-back-to-contents)
 
@@ -147,7 +147,7 @@ To configure, insert `dict` objects into `modelInfo` (type:`array` of `dict`) wi
         <p>
           <b>Note:</b>
           The first item in <code>labelMap</code> is always <code>null</code> because id 0 in Tensorflow label maps are not used. <a href='https://github.com/tensorflow/models/blob/master/research/object_detection/utils/label_map_util.py'><i>(it's reserved for the background label <b>[refer to line 34 to 38]</b>)</i></a><br>
-          So <code>labelMap[0]</code> is not used as well.
+          So <code>labelMap[0]</code> is not used as well, as no detection boxes with id 0 are expected.
         </p>
       </blockquote>
       <details>
@@ -186,26 +186,36 @@ To configure, insert `dict` objects into `modelInfo` (type:`array` of `dict`) wi
 ## `CONFIG_misc.js`
 > Miscellaneous configurables.
 
-### colorPalette (type:`array` of `str`)
+<br>
+
+### `colorPalette` (type:`array` of `str`)
 > The colors palette of the detection boxes.
 
-Similar to [`labelMap`](#modelInfo-labelMap) in `modelInfo` in `CONFIG_modelInfo.js`, a
+It is an `array` of `str`, with its `str` items being CSS colors names/codes.
 
-the prediction data returned from the model states the object class/type using an <code>int</code>.
-      <blockquote>
-        <p>
-          <b>Note:</b>
-          The first item in <code>labelMap</code> is always <code>null</code> because id 0 in Tensorflow label maps are not used. <a href='https://github.com/tensorflow/models/blob/master/research/object_detection/utils/label_map_util.py'><i>(it's reserved for the background label <b>[refer to line 34 to 38]</b>)</i></a><br>
-          So <code>labelMap[0]</code> is not used as well.
+Similar to [`labelMap`](#modelInfo-labelMap) in `modelInfo` in `CONFIG_modelInfo.js`, a detection box with class/type `i` (type:`int`) will be given the color: `colorPalette[i]`.
 
+> **Note:** The first item in `colorPalette` is always `null` because id 0 in Tensorflow label maps are not used. <a href='https://github.com/tensorflow/models/blob/master/research/object_detection/utils/label_map_util.py'>_(it's reserved for the background label **[refer to line 34 to 38]**)_</a>
+<br>So `colorPalette[0]` is not used as well, as no detection boxes with id 0 are expected.
+
+<br>
+
+### `acceptedFileExts` (type:`array` of `str`)
+> Contains all the accepted file/image extensions.
+
+<br>
+
+### `corsProxy` (type:`str`)
+> Contains the CORS-Anywhere proxy URL.
+
+Refer to [googleApiFunctions](TODO) for info on what it's used for.
+
+Refer to [README.md - Setting up > Step 3: Hosting the website](README.md#Step-3-Hosting-the-website-back-to-contents) TODOcheckIfWorks for info on how to set up a new proxy, should the proxy go down.
 
 <br>
 
 # `functions` folder
-
-
-
-
+> Contains all the project's functions, which are split into multiple JavaScript modules.
 
 <br>
 
@@ -228,11 +238,31 @@ callback | the callback function to return the prediction data from Google Cloud
 
 <br>
 
-#### Inner functions in `getPrediction`
-getToken(_callback) {
-  
-}
-sendPayload
+### Inner functions in `getPrediction`
+#### getToken(_callback)
+> Gets the short-lived _(lasts for 1h)_ access token needed to authenticate prediction requests.
+
+
+
+Google Cloud documentation on the general procedure to get access tokens  _(doesn't have documentation for pure JS)_: https://cloud.google.com/iot/docs/how-tos/credentials/jwts
+
+The pure JavaScript implementation of above procedure _(that is used by this function)_: https://stackoverflow.com/questions/28751995/how-to-obtain-google-service-account-access-token-javascript
+
+**What this function does:**
+
+- creates a `dict` payload with `credentials.clientEmail` and `.clientId` _(in `CONFIG_credentials.js`)_, along with some other info
+
+- `JSON.stringify` the payload to give a JSON Web Token (JWT) [_(Here's some background on JWT and JWS)_](https://medium.com/@krishsoftware1991/introduction-to-jwt-json-web-token-jws-json-web-signature-and-jwe-json-web-encryption-7e706799a48)
+
+- sign it with `credentials.privateKey` to get a JSON Web Signature (JWS)
+
+- XHR post the JWS to the [OAuth 2.0 site](https://www.googleapis.com/oauth2/v3/token), which returns the access token
+
+- return the access token to the callback function
+
+<br>
+
+#### sendPayload(token, _callback)
 
 > **_Misc. info_**
 <br>`xhrDict` is a dict of XMLHttpRequests(XHR) objects that are currently running, and that have not gotten a response/error yet.
