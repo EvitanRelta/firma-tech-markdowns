@@ -6,12 +6,12 @@
 
 <br>
 
-### isValidInput(inputElement) <sub><i>[in <code>upload.js</code>]</i></sub> <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
+### isValidInput(inputElement) <sub><i>[in <a href='#uploadjs-back-to-contents'><code>upload.js</code></a>]</i></sub> <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 > Checks if the user-uploaded file/image has an extension thats found in [`acceptedFileExts`](TODO) _(in `CONFIG_misc.js`)_.
 
 <br>
 
-### getImageArray(pageDiv, toBase64, callback) <sub><i>[in <code>upload.js</code>]</i></sub> <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
+### getImageArray(pageDiv, toBase64, callback) <sub><i>[in <a href='#uploadjs-back-to-contents'><code>upload.js</code></a>]</i></sub> <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 <blockquote>
   <ul>
     <li>draws the uploaded image onto the <a href='#glossary-page'><b>*</b></a>page's canvas</li>
@@ -48,7 +48,7 @@ callback|the callback function to return the formatted image data; expects 2 par
 
 ### Inner functions in `getImageArray`
 
-#### switchOnLabelToggle() <sub><i>[Inner function of <code>getImageArray</code>]</i></sub> <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
+#### switchOnLabelToggle() <sub><i>[Inner function of <a href='#getimagearraypagediv-tobase64-callback-in-uploadjs-back-to-contents'><code>getImageArray</code></a>]</i></sub> <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 > Toggle on the `labelToggle` switch <details><summary>Image of the switch</summary><blockquote><img src='readmeAssets/switchOnLabelToggle_switch.png' width='200'></blockquote></details>
 
 This is to ensure the detection boxes are always shown whenever a new image is uploaded.
@@ -61,7 +61,7 @@ This is to ensure the detection boxes are always shown whenever a new image is u
 
 <br>
 
-#### displayScaledImage(displaySize) <sub><i>[Inner function of <code>getImageArray</code>]</i></sub> <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
+#### displayScaledImage(displaySize) <sub><i>[Inner function of <a href='#getimagearraypagediv-tobase64-callback-in-uploadjs-back-to-contents'><code>getImageArray</code></a>]</i></sub> <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 > Displays the uploaded image file, by scaling it to `displaySize` and then drawing it on the <a href='#glossary-page'><b>*</b></a>page's canvas.
 
 The displayed image will have an area equal to (displaySize ^ 2).
@@ -74,7 +74,7 @@ The displayed image will have an area equal to (displaySize ^ 2).
 
 <br>
 
-#### getRGBArray() <sub><i>[Inner function of <code>getImageArray</code>]</i></sub> <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
+#### getRGBArray() <sub><i>[Inner function of <a href='#getimagearraypagediv-tobase64-callback-in-uploadjs-back-to-contents'><code>getImageArray</code></a>]</i></sub> <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 <blockquote>
   Gets the image data in 3D RGB array format.
   <details>
@@ -137,7 +137,7 @@ The displayed image will have an area equal to (displaySize ^ 2).
 
 ### Misc. functions in `upload.js`
 
-#### getByteSize(str) <sub><i>[in <code>upload.js</code>]</i></sub> <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
+#### getByteSize(str) <sub><i>[in <a href='#uploadjs-back-to-contents'><code>upload.js</code></a>]</i></sub> <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 > Same as the [getByteSize](TODO) in `googleApiFunctions.js`.
 
 <br>
