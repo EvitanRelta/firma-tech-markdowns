@@ -1,3 +1,7 @@
+# `configs` folder <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
+# `configs` folder <sup><sup>[_(back to Contents)_](#Table-of-Contents)</sup></sup>
+# `configs` folder <sup><sup><sup>[_(back to Contents)_](#Table-of-Contents)</sup></sup></sup>
+# `configs` folder <sup><sup><sup><sup>[_(back to Contents)_](#Table-of-Contents)</sup></sup></sup></sup>
 ## `googleApiFunctions.js` <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 > Contains the function that interact with the Google Cloud service, including:
 > - authentication
