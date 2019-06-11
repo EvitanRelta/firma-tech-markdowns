@@ -17,9 +17,9 @@ callback | the callback function to return the prediction data from Google Cloud
 
 <br>
 
-### Inner functions in `getPrediction`
+## Inner functions in `getPrediction`
 
-#### getToken(_callback) <sub><i>[Inner function of <a href='#getpredictionpagediv-model-imagedata-callback-in-googleapifunctionsjs-back-to-contents'><code>getPrediction</code></a>]</i></sub> <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
+### getToken(_callback) <sub><i>[Inner function of <a href='#getpredictionpagediv-model-imagedata-callback-in-googleapifunctionsjs-back-to-contents'><code>getPrediction</code></a>]</i></sub> <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 > Gets the short-lived _(lasts for 1h)_ access token needed to authenticate prediction requests.
 
 Google Cloud documentation on the general procedure to get access tokens  _(doesn't have documentation for pure JS)_: https://cloud.google.com/iot/docs/how-tos/credentials/jwts
@@ -40,7 +40,7 @@ The pure JavaScript implementation of above procedure _(that is used by this fun
 
 <br>
 
-#### sendPayload(token, _callback) <sub><i>[Inner function of <a href='#getpredictionpagediv-model-imagedata-callback-in-googleapifunctionsjs-back-to-contents'><code>getPrediction</code></a>]</i></sub> <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
+### sendPayload(token, _callback) <sub><i>[Inner function of <a href='#getpredictionpagediv-model-imagedata-callback-in-googleapifunctionsjs-back-to-contents'><code>getPrediction</code></a>]</i></sub> <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 > Gets the prediction data from Google Cloud ML model, by sending the access token _(returned from `getToken`)_ and the image data _(formatted by `getImageArray`)_.
 
 **What this function does:**
@@ -72,7 +72,7 @@ where `PAGE_ID_n` is the `id` (type:`str`) of the page's `<div>` container
 
 ### Misc. functions in `googleApiFunctions.js`
 
-#### setDictHeaders(xhr, dictHeader) <sub><i>[in <a href='#googleapifunctionsjs-back-to-contents'><code>googleApiFunctions.js</code></a>]</i></sub> <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
+### setDictHeaders(xhr, dictHeader) <sub><i>[in <a href='#googleapifunctionsjs-back-to-contents'><code>googleApiFunctions.js</code></a>]</i></sub> <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 > Set headers of a `XMLHttpRequest` object using a `dict`; instead of doing `XMLHttpRequest.setRequestHeader(header, value)` for every header.
 <table>
   <tr>
