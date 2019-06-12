@@ -20,23 +20,23 @@
 > - [`functions` folder](#functions-folder-back-to-contents)
 >   - [`getImageData.js`](#getimagedatajs-back-to-contents)
 >       - [`getImageArray(pageDiv, toBase64, callback)`](#getimagearraypagediv-tobase64-callback-in-getimagedatajs-back-to-contents)
->           - **Inner functions in `getImageArray`:**
+>           - **_Inner functions in `getImageArray`:_**
 >           - [`onBoxSwitch()`](#onboxswitch-inner-function-of-getimagearray-back-to-contents)
 >           - [`displayScaledImage(displaySize)`](#displayscaledimagedisplaysize-inner-function-of-getimagearray-back-to-contents)
 >           - [`getRGBArray()`](#getrgbarray-inner-function-of-getimagearray-back-to-contents)
 >           - [`getBase64()`](#getbase64-inner-function-of-getimagearray-back-to-contents)
->               - **Inner functions in `getBase64`:**
+>               - **_Inner functions in `getBase64`:_**
 >               - [`getScaledB64(_scale)`](#getscaledb64_scale-inner-function-of-getbase64-back-to-contents)
 >               - [`getEstimatedScale(imageArea)`](#getestimatedscaleimagearea-inner-function-of-getbase64-back-to-contents)
->       - **Misc. functions in `getImageData.js`:**
+>       - **_Misc. functions in `getImageData.js`:_**
 >       - [`getByteSize(str)`](#getbytesizestr-in-getimagedatajs-back-to-contents)
 ><br><br>
 >   - [`googleApiFunctions.js`](#googleapifunctionsjs-back-to-contents)
 >       - [`getPrediction(pageDiv, model, imageData, callback)`](#getpredictionpagediv-model-imagedata-callback-in-googleapifunctionsjs-back-to-contents)
->           - **Inner functions in `getPrediction`:**
+>           - **_Inner functions in `getPrediction`:_**
 >           - [`getToken(_callback)`](#gettoken_callback-inner-function-of-getprediction-back-to-contents)
 >           - [`sendPayload(token, _callback)`](#sendpayloadtoken-_callback-inner-function-of-getprediction-back-to-contents)
->       - **Misc. functions in `googleApiFunctions.js`:**
+>       - **_Misc. functions in `googleApiFunctions.js`:_**
 >       - [`setDictHeaders(xhr, dictHeader)`](#setdictheadersxhr-dictheader-in-googleapifunctionsjs-back-to-contents)
 >       - [`getByteSize(str)`](#getbytesizestr-in-googleapifunctionsjs-back-to-contents)
 >       - [`commaFormat(floatOrInt)`](#commaformatfloatorint-in-googleapifunctionsjs-back-to-contents)
@@ -47,7 +47,7 @@
 >       - [`focusOn(tabElement)`](#focusontabelement-in-guifunctionsjs-back-to-contents)
 >       - [`openNavBar()`](#opennavbar-in-guifunctionsjs-back-to-contents)
 >       - [`window.setInterval`](#windowsetinterval-----in-guifunctionsjs-back-to-contents)
->       - [`displayLoading(pageDiv)`](#displayloadingpagediv-in-guifunctionsjs-back-to-contents)
+>       - [`displayLoading(pageDiv)`](#displayloadingpagediv-in-guifunctionsjs-back-to-contents)    
 >       - [`stopLoading(pageDiv)`](#stoploadingpagediv-in-guifunctionsjs-back-to-contents)
 >       - [`displayToggleSwitch(pageDiv)`](#displaytoggleswitchpagediv-in-guifunctionsjs-back-to-contents)
 >       - [`displayError(pageDiv, strError)`](#displayerrorpagediv-strerror-in-guifunctionsjs-back-to-contents)
