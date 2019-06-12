@@ -20,23 +20,23 @@
 > - [`functions` folder](#functions-folder-back-to-contents)
 >   - [`getImageData.js`](#getimagedatajs-back-to-contents)
 >       - [`getImageArray(pageDiv, toBase64, callback)`](#getimagearraypagediv-tobase64-callback-in-getimagedatajs-back-to-contents)
->           - **Inner functions in `getImageArray`:**
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Inner functions in `getImageArray`:**
 >           - [`onBoxSwitch()`](#onboxswitch-inner-function-of-getimagearray-back-to-contents)
 >           - [`displayScaledImage(displaySize)`](#displayscaledimagedisplaysize-inner-function-of-getimagearray-back-to-contents)
 >           - [`getRGBArray()`](#getrgbarray-inner-function-of-getimagearray-back-to-contents)
 >           - [`getBase64()`](#getbase64-inner-function-of-getimagearray-back-to-contents)
->               - **Inner functions in `getBase64`:**
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Inner functions in `getBase64`:**
 >               - [`getScaledB64(_scale)`](#getscaledb64_scale-inner-function-of-getbase64-back-to-contents)
 >               - [`getEstimatedScale(imageArea)`](#getestimatedscaleimagearea-inner-function-of-getbase64-back-to-contents)
->       - **Misc. functions in `getImageData.js`:**
+><br>**Misc. functions in `getImageData.js`:**
 >       - [`getByteSize(str)`](#getbytesizestr-in-getimagedatajs-back-to-contents)
 ><br><br>
 >   - [`googleApiFunctions.js`](#googleapifunctionsjs-back-to-contents)
 >       - [`getPrediction(pageDiv, model, imageData, callback)`](#getpredictionpagediv-model-imagedata-callback-in-googleapifunctionsjs-back-to-contents)
->           - **Inner functions in `getPrediction`:**
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Inner functions in `getPrediction`:**
 >           - [`getToken(_callback)`](#gettoken_callback-inner-function-of-getprediction-back-to-contents)
 >           - [`sendPayload(token, _callback)`](#sendpayloadtoken-_callback-inner-function-of-getprediction-back-to-contents)
->       - **Misc. functions in `googleApiFunctions.js`:**
+><br>**Misc. functions in `googleApiFunctions.js`:**
 >       - [`setDictHeaders(xhr, dictHeader)`](#setdictheadersxhr-dictheader-in-googleapifunctionsjs-back-to-contents)
 >       - [`getByteSize(str)`](#getbytesizestr-in-googleapifunctionsjs-back-to-contents)
 >       - [`commaFormat(floatOrInt)`](#commaformatfloatorint-in-googleapifunctionsjs-back-to-contents)
