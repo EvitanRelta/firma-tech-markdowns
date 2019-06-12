@@ -1,1 +1,1 @@
-### toggleBoxVisibility(chkbox) <sub><i>[in <a href='#guifunctionsjs-back-to-contents'><code>guiFunctions.js</code></a>]</i></sub> <sup><sup>[_(back to Contents)_](#Table-of-Contents)</sup></sup>
+### drawDetectionBoxes(pageDiv, model, data) <sub><i>[in <a href='#drawboxesjs-back-to-contents'><code>drawBoxes.js</code></a>]</i></sub> <sup><sup>[_(back to Contents)_](#Table-of-Contents)</sup></sup>
