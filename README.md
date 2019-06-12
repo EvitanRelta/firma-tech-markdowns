@@ -62,7 +62,7 @@ In the `configs` folder, edit the `CONFIG_credentials.js` and `CONFIG_modelInfo.
 This contains the Google Cloud credentials used to get the predictions from Google Cloud ML.
 
 `scope` _(probably)_ should always be the same, so leave it alone.
-<br>Change `clientEmail`, `clientId`, `apiKey` and `privateKey` to that of your Google Cloud credential, and ensure that those credentials have access to request predictions from Google Cloud ML. _(more details in [documentation — CONFIG_credentials.js](#config_credentialsjs-back-to-contents))_
+<br>Change `clientEmail`, `clientId`, `apiKey` and `privateKey` to that of your Google Cloud credential, and ensure that those credentials have access to request predictions from Google Cloud ML. _(more details in [documentation — CONFIG_credentials.js](DOCUMENTATION.md#config_credentialsjs-back-to-contents))_
 
 <br>
 
