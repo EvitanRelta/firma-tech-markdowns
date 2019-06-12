@@ -50,16 +50,16 @@ Uses `pagesThatsLoading` (type:`dict` of `HTMLDivElement`) to determine the page
 ### displayLoading(pageDiv) <sub><i>[in <a href='#guifunctionsjs-back-to-contents'><code>guiFunctions.js</code></a>]</i></sub> <sup><sup>[_(back to Contents)_](#Table-of-Contents)</sup></sup>
 > Starts and displays the loading animations, and hide the "`Toggle box visibility`" switch on the `pageDiv` (type:`HTMLDivElement`) <a href='#glossary-page'><b>*</b></a>page.
 
-It starts the "`Loading...`" dot animation by adding `pageDiv` (type:`HTMLDivElement`) to `pagesThatsLoading` (type:`dict` of `HTMLDivElement`) to be animated by the [window.setInterval](TODOwindow.setInterval) script.
+It starts the "`Loading...`" dot animation by adding `pageDiv` (type:`HTMLDivElement`) to `pagesThatsLoading` (type:`dict` of `HTMLDivElement`) to be animated by the [window.setInterval](#windowsetinterval-----in-guifunctionsjs-back-to-contents) script.
 
 <br>
 
 ### stopLoading(pageDiv) <sub><i>[in <a href='#guifunctionsjs-back-to-contents'><code>guiFunctions.js</code></a>]</i></sub> <sup><sup>[_(back to Contents)_](#Table-of-Contents)</sup></sup>
 > Stops and hides the loading animations on the `pageDiv` (type:`HTMLDivElement`) <a href='#glossary-page'><b>*</b></a>page.
 
-It stops the "`Loading...`" dot animation by removing `pageDiv` (type:`HTMLDivElement`) from `pagesThatsLoading` (type:`dict` of `HTMLDivElement`), thus stopping the [window.setInterval](TODOwindow.setInterval) script from animating it.
+It stops the "`Loading...`" dot animation by removing `pageDiv` (type:`HTMLDivElement`) from `pagesThatsLoading` (type:`dict` of `HTMLDivElement`), thus stopping the [window.setInterval](#windowsetinterval-----in-guifunctionsjs-back-to-contents) script from animating it.
 
-Unlike [`displayLoading`](TODO), this function doesn't show the "`Toggle box visibility`" switch. 
+Unlike [`displayLoading`](#displayloadingpagediv-in-guifunctionsjs-back-to-contents), this function doesn't show the "`Toggle box visibility`" switch. 
 
 <details>
   <summary>Reason</summary>
@@ -166,7 +166,7 @@ function displayToggleSwitch(pageDiv) {
 <br>
 
 ### run(inputElement, model) <sub><i>[in <a href='#guifunctionsjs-back-to-contents'><code>guiFunctions.js</code></a>]</i></sub> <sup><sup>[_(back to Contents)_](#Table-of-Contents)</sup></sup>
-> The function that triggers after the user uploads an **valid** image _(validated by [`isValidInput`](TODO))_. It calls the functions in the other modules to perform the prediction request.
+> The function that triggers after the user uploads an **valid** image _(validated by [`isValidInput`](#isvalidinputinputelement-in-guifunctionsjs-back-to-contents))_. It calls the functions in the other modules to perform the prediction request.
 
 Parameter|Type|Description
 ---|---|---
