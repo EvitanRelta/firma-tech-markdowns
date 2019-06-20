@@ -73,6 +73,7 @@ To select the points that are pointing the wrong direction:
 <br>
 
 
+-
   - **Method 2 - by trackball**
 
   1. using holding the middle-mouse-button (MMB) position <details><summary>Example image</summary>This is a bird's-eye view of a pointcloud of a floor.<br><br>The dark gray points have normals facing downwards instead of upwards.<img src='markdown_assets\meshlab\NORMALS_flipping_method1_1.png' width='600'></details><br>Zoom out so that the pointcloud/mesh looks far away from you ([reason](TODO))<details><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_2.png' width='600'></details>
