@@ -13,6 +13,10 @@
 >       - [`corsProxy` (type:`str`)](#corsproxy-typestr-back-to-contents)
 ><br><br>
 > - [`functions` folder](#functions-folder-back-to-contents)
+>   - [`exifExtractor.js`](#exifextractorjs-back-to-contents)
+>       - [`exportToCsv(fileName, arrayOfDict)`](#exporttocsvfilename-arrayofdictin-exifextractorjs-back-to-contents)
+>       - [`DMSToDD(degrees, minutes, seconds, direction)`](#dmstodddegrees-minutes-seconds-direction-in-exifextractorjs-back-to-contents)
+>       - [`onclick_btnExtract()`](#onclick_btnextractin-exifextractorjs-back-to-contents)
 >   - [`getImageData.js`](#getimagedatajs-back-to-contents)
 >       - [`getImageArray(pageDiv, toBase64, callback)`](#getimagearraypagediv-tobase64-callback-in-getimagedatajs-back-to-contents)
 >           - **_Inner functions in `getImageArray`:_**
