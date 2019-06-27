@@ -4,7 +4,7 @@ For more info on MeshLab, you can watch the youtube videos of [**`Mister P. Mesh
 
 > **Random tip:** For massive pointclouds (ie. >2mil points), you can:
 > 1. make it invisible
-> 2. take a smaller sample of it ([how to sample](TODO))
+> 2. take a smaller sample of it ([how to sample](#sampling--subsampling--down-sampling-back-to-contents))
 > 3. select the original (massive) pointcloud layer
 > 4. do operations (eg. selecting points/faces) on the invisible original pointcloud, while using the smaller sample pointcloud to guide you
 <br><br>or perhaps, view the normals of the sample pointcloud, to get a representative view of the normals of the original pointcloud _(without the lag)_
@@ -97,7 +97,7 @@ Then to open the mesh/pointcloud files, simply import them into MeshLab via `Fil
 ## Basic <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 
 Key|What it does
----|---|---
+---|---
 LeftMouseButton(LMB) (hold + drag)|rotate about trackball center
 MouseWheel|zoom in/out
 MiddleMouseButton(MMB) (hold + drag)|move trackball
@@ -110,11 +110,11 @@ double click (on a point/face)|center trackball at the selected point/face
 ## Useful shortcuts <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 
 Key|What it does
----|---|---
+---|---
 Ctrl + H|reset camera settings
 Shift + mouseWheel|change Field of View (FOV)
 Alt + Enter|fullscreen mode
-Ctrl + Shift + LMB (hold + drag)|change direction of lighting<br>(effects are only visible if model has normals)
+<span id='change-direction-of-lighting'></span>Ctrl + Shift + LMB (hold + drag)|change direction of lighting<br>(effects are only visible if model has normals)
 Ctrl + mouseWheel|change near clipping range<br>(how close a point/face has to be to you, before it unrenders)
 Ctrl + Shift + E|export mesh/pointcloud
 
@@ -136,7 +136,7 @@ For faces:<br><img src='markdown_assets\meshlab\NAVIGATION_2.png' width='350'>
 ### Shading (for points) <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 Setting|What it does
 ---|---
-Vert|square points, shading based on point's normal and direction of lighting<br>([adjustable via Ctrl + Shift + LMB(hold + drag)](TODO))
+Vert|square points, shading based on point's normal and direction of lighting<br>([adjustable via Ctrl + Shift + LMB (hold + drag)](#change-direction-of-lighting))
 Dot Decorator|circular points, no shading
 None|square points, no shading
 
@@ -264,7 +264,7 @@ After clicking, most of the top-bar icons should be grayed out like this
 <br>
 
 ## Selecting <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
-To select points/faces, enter the selection mode _([as described above](TODO))_, then **hold and drag LMB**.
+To select points/faces, enter the selection mode _([as described above](#the-selection-mode-back-to-contents))_, then **hold and drag LMB**.
 
 When selecting, you can press and hold on these keys:
 
@@ -291,7 +291,7 @@ Deselect all|`Filters > Selection > Select None`|`Ctrl + Shift + D`
 
 What it does|Location
 ---|---
-Select big **faces** (useful for [cleaning up meshs](TODO))|`Filters > Selection > Select faces with edges longer than`
+Select big **faces** (useful for [cleaning up meshs](#cleaning-the-mesh-back-to-contents))|`Filters > Selection > Select faces with edges longer than`
 Select specific faces/vertices using a user-defined function|`Filters > Selection > Conditional face/vertex selection`
 
 <br>
@@ -313,6 +313,8 @@ To delete selected points/faces, click on one of these icons: <img src='markdown
 It's an operation to take a smaller pointcloud sample from a pointcloud. Useful for when the pointcloud is too large.
 
 > I only used screen poisson-disk sampling, so idk about the other algorithms.
+
+<br>
 
 ## Poisson-disk sampling <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 1. select `Filters > Sampling > Poisson-disk Sampling`
@@ -389,7 +391,7 @@ One such situation is when the rendering engine uses [back-face culling](https:/
 ### To fix the above problem <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 - For a simple model, that only has a single plane, like a wall or floor:
 
-  1. look at the pointcloud/mesh in the direction opposing the normal vector direction that you want. (eg. for a floor mesh, look at it from a bird's-eye view, as you want the normals to point up)<details><summary>Example image</summary>Bird's-eye view of the pointcloud of a floor.<br><img src='markdown_assets\meshlab\NORMALS_flipping_method1_1.png' width='600'></details><br>Zoom out so that the pointcloud/mesh looks far away from you ([reason](TODO))<details><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_2.png' width='600'></details>
+  1. look at the pointcloud/mesh in the direction opposing the normal vector direction that you want. (eg. for a floor mesh, look at it from a bird's-eye view, as you want the normals to point up)<details><summary>Example image</summary>Bird's-eye view of the pointcloud of a floor.<br><img src='markdown_assets\meshlab\NORMALS_flipping_method1_1.png' width='600'></details><br>Zoom out so that the pointcloud/mesh looks far away from you ([reason](#why-the-view-point-must-be-far-away))<details><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_2.png' width='600'></details>
 
   2. select `Filters > Normals, Curvatures and Orientation > Compute normals for point sets`
 
@@ -409,7 +411,7 @@ One such situation is when the rendering engine uses [back-face culling](https:/
 
   - you'll have to first compute the normals with the `Flip normals w.r.t. viewpoint` option **unchecked**
 
-  - then by using multiple different view-points / view-directions, you'll need to flip the wrongly faced points using the method described in the [`Flipping normals for pointcloud`](TODO) section below<details><summary>Example image</summary>Here's the cross-section of a column / pillar.<br>Notice how some points' normals are facing inwards instead of outwards.<br><img src='markdown_assets\meshlab\NORMALS_computing_4.png' width='350'><br><br>To flip the inward-facing normals using the [`Flipping normals for pointcloud`](TODO) methods, at least 2 viewpoints are needed as shown.<br>To understand why, read up about how this works [here](TODO).<br><img src='markdown_assets\meshlab\NORMALS_computing_5.png' width='500'></details>
+  - then by using multiple different view-points / view-directions, you'll need to flip the wrongly faced points using the method described in the [`Flipping normals for pointcloud`](#flipping-normals-for-pointcloud-back-to-contents) section below<details><summary>Example image</summary>Here's the cross-section of a column / pillar.<br>Notice how some points' normals are facing inwards instead of outwards.<br><img src='markdown_assets\meshlab\NORMALS_computing_4.png' width='350'><br><br>To flip the inward-facing normals using the [`Flipping normals for pointcloud`](#flipping-normals-for-pointcloud-back-to-contents) methods, at least 2 viewpoints are needed as shown.<br>To understand why, read up about how this works [here](#how-the-3-selection-methods-works-back-to-contents).<br><img src='markdown_assets\meshlab\NORMALS_computing_5.png' width='500'></details>
 
 <br>
 <hr>
@@ -479,7 +481,7 @@ To select the points that are pointing the wrong direction:
 
   - <span id='method-1--by-view-position'></span>**Method 1 - by view position** <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
   
-  1. look at the pointcloud/mesh in the direction opposing the normal vector direction that you want. (eg. for a floor mesh, look at it from a bird's-eye view, as you want the normals to point up)<details><summary>Example image</summary>This is a bird's-eye view of a pointcloud of a floor.<br>The dark gray points have normals facing downwards instead of upwards.<br><img src='markdown_assets\meshlab\NORMALS_flipping_method1_1.png' width='600'></details><br>Zoom out so that the pointcloud/mesh looks far away from you ([reason](TODO))<details><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_2.png' width='600'></details>
+  1. look at the pointcloud/mesh in the direction opposing the normal vector direction that you want. (eg. for a floor mesh, look at it from a bird's-eye view, as you want the normals to point up)<details><summary>Example image</summary>This is a bird's-eye view of a pointcloud of a floor.<br>The dark gray points have normals facing downwards instead of upwards.<br><img src='markdown_assets\meshlab\NORMALS_flipping_method1_1.png' width='600'></details><br>Zoom out so that the pointcloud/mesh looks far away from you ([reason](#why-the-view-point-must-be-far-away))<details><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_2.png' width='600'></details>
 
   2. select `Filters > Normals, Curvatures and Orientation > Compute normals for point sets`
 
@@ -529,7 +531,7 @@ To select the points that are pointing the wrong direction:
 
 1. select `Normals, Curvatures, Orientation > Per Vertex Normal Function`
 
-2. leave the functions as default, and check `only on selection`<details><summary>Image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_flip.png' width='250'></details>
+2. leave the functions as default, and check `only on selection`<details><summary>Image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_flip.png' width='350'></details>
 
 4. `Apply`
 
@@ -537,7 +539,7 @@ To select the points that are pointing the wrong direction:
 <hr>
 <br>
 
-## How the [3 selection methods](TODO) works <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
+## How the [3 selection methods](#method-1--by-view-position) works <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 > For illustration purposes, 2D vectors are used here
 
 - For **Method 1 (by view position)** and **Method 2 (by trackball)**:
@@ -554,7 +556,7 @@ To select the points that are pointing the wrong direction:
 
   - Here's a gif showing the above steps:<br><img src='markdown_assets\meshlab\NORMALS_how_selection_works_1.gif' width='300'><br><br>
 
-  - as to why the view point must be far away from the model,<br>here's a gif showing a viewpoint thats very close the the model,<br>and a point that's on a "bump" on a floor pointcloud.<br>Notice how although the point's normal is facing the wrong way, it isn't flipped as the angle is < 90°.<br><img src='markdown_assets\meshlab\NORMALS_how_selection_works_2.gif' width='300'>
+  - <span id='why-the-view-point-must-be-far-away'></span>as to why the view point must be far away from the model,<br>here's a gif showing a viewpoint thats very close the the model,<br>and a point that's on a "bump" on a floor pointcloud.<br>Notice how although the point's normal is facing the wrong way, it isn't flipped as the angle is < 90°.<br><img src='markdown_assets\meshlab\NORMALS_how_selection_works_2.gif' width='300'>
 
 <br><br>
 
@@ -568,7 +570,7 @@ To select the points that are pointing the wrong direction:
 <br>
 
 # Meshing of a pointcloud <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
-> **Note:** You'll need a pointcloud **WITH NORMALS** to do meshing. If the pointcloud doesn't have normals, go to the [Normals > Computing normals for pointcloud](TODO) section to see how to computing the normals.
+> **Note:** You'll need a pointcloud **WITH NORMALS** to do meshing. If the pointcloud doesn't have normals, go to the [Normals – Computing normals for pointcloud](#computing-normals-for-pointcloud-back-to-contents) section to see how to computing the normals.
 
 <br>
 <hr>
