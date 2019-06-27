@@ -74,6 +74,18 @@ For more info on MeshLab, you can watch the youtube videos of [**`Mister P. Mesh
 <hr>
 <br>
 
+# WARNINGS
+> MeshLab does **NOT**:
+> - have an undo function
+> - prompt you to save when you close it
+> - prompt you when deleting layers, points/faces, etc.
+> - prompt you before performing an operation. Thus, before you perform an operation on a layer, ensure you selected the right layer
+
+<br>
+<hr>
+<hr>
+<br>
+
 # Saving / Exporting <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 I **highly recommend** that you **DON'T** save using `File > Save Project As...` (Ctrl + S).
 
@@ -453,7 +465,7 @@ To see normals vectors:
 
 <br>
 
-> **FYI:** For very big pointclouds, you can do a [`Sampling`](TODO) operation to get a smaller pointcloud, and then viewing the normals of the sample instead.
+> **FYI:** For very big pointclouds, you can do a [`Sampling`](#sampling--subsampling--down-sampling-back-to-contents) operation to get a smaller pointcloud, and then viewing the normals of the sample instead.
 
 <br>
 <hr>
