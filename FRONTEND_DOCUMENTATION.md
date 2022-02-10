@@ -75,7 +75,7 @@ The responsive navigation bar design is taken from: https://www.w3schools.com/ho
 
 However, the navigation bar isn't properly responsive as the canvas is bigger than the responsive navigation bar. 
 
-<details>
+<details open>
   <summary>Image</summary>
   <blockquote>
     <img src='readmeAssets/navigationbar_responsiveness.png' width='600'>
@@ -120,7 +120,7 @@ pagesThatsLoading|Refer to [guiFunctions.js > window.setInterval](#windowsetinte
 **For the proxy:**
 <br>Besides to start it up, pinging the proxy also served to check whether the proxy is unescaping the headers properly. 
 
-<details>
+<details open>
   <summary>Details</summary>
   <blockquote>
     It checks by sending a XHR post to <a href='http://httpbin.org/post'>http://httpbin.org/post</a> <i>via</i> the proxy, which returns the XHR request headers <i>(and all other details)</i> back in the XHR response.
@@ -251,7 +251,7 @@ To configure, insert `dict` objects into `modelInfo` (type:`array` of `dict`) wi
     <td>
       <code>true</code> - if the model accepts base64 encoded images.<br>
       <code>false</code> - if it accepts 3D RGB tensor/array
-      <details>
+      <details open>
         <summary>Example of 3D RGB tensor/array</summary>
         <blockquote>
           a 3D RGB tensor/array of a 2x2 square<br>
@@ -276,7 +276,7 @@ To configure, insert `dict` objects into `modelInfo` (type:`array` of `dict`) wi
           So <code>labelMap[0]</code> is not used as well, as no detection boxes with id 0 are expected.
         </p>
       </blockquote>
-      <details>
+      <details open>
         <summary>Example</summary>
         <blockquote>
           the prediction data returned will be in this general format:
@@ -369,7 +369,7 @@ Refer to [SETTING_UP_FRONTEND.md — Setting up > Step 3: Hosting the website](S
     <li>draws the uploaded image onto the page's canvas</li>
     <li>
       and get the image data in either 3D RGB tensor/array or base64 encoded format
-      <details>
+      <details open>
         <summary>Example of 3D RGB tensor/array</summary>
         <blockquote>
           a 3D RGB tensor/array of a 2x2 square<br>
@@ -410,10 +410,10 @@ callback|`function`|the callback function to return the formatted image data; ex
 ### Inner functions in `getImageArray`
 
 ### onBoxSwitch() <sub><i>[Inner function of <a href='#getimagearraypagediv-tobase64-callback-in-getimagedatajs-back-to-contents'><code>getImageArray</code></a>]</i></sub> <sup><sup>[_(back to Contents)_](#Table-of-Contents)</sup></sup>
-> Toggle on the "`Toggle box visibility`" switch <details><summary>Image of the switch</summary><blockquote><img src='readmeAssets/switch.png' width='200'></blockquote></details>
+> Toggle on the "`Toggle box visibility`" switch <details open><summary>Image of the switch</summary><blockquote><img src='readmeAssets/switch.png' width='200'></blockquote></details>
 
 This is to ensure the detection boxes are always shown whenever a new image is uploaded.
-<details>
+<details open>
   <summary>Reason for doing so</summary>
   <blockquote>
     Else the user might toggle-off the boxes, send a new image and wonder why there are no boxes <i>(when in reality, it's because the boxes' visibilities are toggled off)</i>
@@ -427,7 +427,7 @@ This is to ensure the detection boxes are always shown whenever a new image is u
 
 The displayed image will have an area equal to (displaySize ^ 2).
 
-<details>
+<details open>
 	<summary>Reason for (<code>displaySize</code> ^ 2)</summary>
 	I thought it would be easier for one to estimate length rather than area. <i>(ie. easier to estimate width and height of image rather than area)</i>
 	<br>So <code>displaySize=512</code> will scale the images to the same area as a 512x512 image.
@@ -438,7 +438,7 @@ The displayed image will have an area equal to (displaySize ^ 2).
 ### getRGBArray() <sub><i>[Inner function of <a href='#getimagearraypagediv-tobase64-callback-in-getimagedatajs-back-to-contents'><code>getImageArray</code></a>]</i></sub> <sup><sup>[_(back to Contents)_](#Table-of-Contents)</sup></sup>
 <blockquote>
   Gets the image data in 3D RGB array format.
-  <details>
+  <details open>
     <summary>Example of 3D RGB tensor/array</summary>
     <blockquote>
       a 3D RGB tensor/array of a 2x2 square<br>
@@ -457,7 +457,7 @@ The displayed image will have an area equal to (displaySize ^ 2).
   <li>creates a new invisible canvas</li>
   <li>
     estimate if image will exceed Google Cloud's payload limit of 1572864 bytes
-    <details>
+    <details open>
       <summary>Details on how the `98303` value was calculated</summary>
       The largest string a pixel can be in 3D RGB array format can be is "[[xxx,xxx,xxx]]," where the RGB values are all 3-digit integers, and where the image is a 1 pixel thick vertical line.
       Thus, the max. byte size of a pixel is 16 <i>(ie. the byte size of "[[xxx,xxx,xxx]],")</i>
@@ -469,7 +469,7 @@ The displayed image will have an area equal to (displaySize ^ 2).
   </ul>
   <li>
     using the new canvas, get the raw 1D RGBA <i>(A for alpha)</i> image data
-    <details>
+    <details open>
       <summary>Format of 1D RGBA image data</summary>
       <blockquote>
         <pre>[R1, G1, B1, A1, R2, G2, B2, A2, R3, ...]</pre>
@@ -479,7 +479,7 @@ The displayed image will have an area equal to (displaySize ^ 2).
   </li>
   <li>
     parse/format the image data to 3D RGB array
-    <details>
+    <details open>
       <summary>Example of 3D RGB tensor/array</summary>
       <blockquote>
         a 3D RGB tensor/array of a 2x2 square<br>
@@ -679,7 +679,7 @@ where `PAGE_ID_n` is the `id` (type:`str`) of the page's `<div>` container
     <td>
       <span id='prediction-data'></span>
       prediction data returned by <a href='#getpredictionpagediv-model-imagedata-callback-in-googleapifunctionsjs-back-to-contents'><code>getPrediction</code></a>
-      <details>
+      <details open>
         <summary>Format</summary>
         <blockquote>
           <pre>{
@@ -752,7 +752,7 @@ tabElement is the HTML element object of the selected tab.
 - remove the `active` class from all tabs elements _(making them all black)_
 - add active class to selected tab element _(making it green)_
 - hide all pages
-- show only the respective selected page<details><summary>Details</summary><blockquote>If tab id is "tab-2", the function will find for the page with id "page-2"</blockquote></details>
+- show only the respective selected page<details open><summary>Details</summary><blockquote>If tab id is "tab-2", the function will find for the page with id "page-2"</blockquote></details>
 
 <br>
 
@@ -763,7 +763,7 @@ The responsive navigation bar design is taken from: https://www.w3schools.com/ho
 
 However, the navigation bar isn't properly responsive as the canvas is bigger than the responsive navigation bar. 
 
-<details>
+<details open>
   <summary>Image</summary>
   <blockquote>
     <img src='readmeAssets/navigationbar_responsiveness.png' width='600'>
@@ -793,7 +793,7 @@ It stops the "`Loading...`" dot animation by removing `pageDiv` (type:`HTMLDivEl
 
 Unlike [`displayLoading`](#displayloadingpagediv-in-guifunctionsjs-back-to-contents), this function doesn't show the "`Toggle box visibility`" switch. 
 
-<details>
+<details open>
   <summary>Reason</summary>
   <blockquote>
     When an error occurs, the loading animations needs to be hidden, and replaced by the error message instead of the switch. 
@@ -812,7 +812,7 @@ Unlike [`displayLoading`](#displayloadingpagediv-in-guifunctionsjs-back-to-conte
 ### displayError(pageDiv, strError) <sub><i>[in <a href='#guifunctionsjs-back-to-contents'><code>guiFunctions.js</code></a>]</i></sub> <sup><sup>[_(back to Contents)_](#Table-of-Contents)</sup></sup>
 > Displays the `strError` (type:`str`) error message on the `pageDiv` (type:`HTMLDivElement`) page.
 
-<details>
+<details open>
   <summary>Image of error message</summary>
   <blockquote>
     <img src='readmeAssets/error_message.png' width='500'>
@@ -824,7 +824,7 @@ Unlike [`displayLoading`](#displayloadingpagediv-in-guifunctionsjs-back-to-conte
 ### hideError(pageDiv) <sub><i>[in <a href='#guifunctionsjs-back-to-contents'><code>guiFunctions.js</code></a>]</i></sub> <sup><sup>[_(back to Contents)_](#Table-of-Contents)</sup></sup>
 > Hides error message on the `pageDiv` (type:`HTMLDivElement`) page.
 
-<details>
+<details open>
   <summary>Image of error message</summary>
   <blockquote>
     <img src='readmeAssets/error_message.png' width='500'>
@@ -925,7 +925,7 @@ and sometimes it's accompanied by the custom console warnings such as:
   model: "{MODEL_NAME}"
 ```
 
-<details>
+<details open>
   <summary>Example images in Chrome browser</summary>
   <blockquote>
     <img src='readmeAssets/error_console.png' width='600'>
@@ -954,7 +954,7 @@ A work around is to simply wait for some time _(~1-2mins)_ after loading the HTM
 
 Term | What I mean
 ---|---
-`tab` | <span id='glossary-tab'></span>a tab on the navigation bar<details><summary>Example</summary><blockquote><h3>Tab 1</h3><img src='readmeAssets/solarpanel_tab.png' width='300'><br><h3>Tab 2</h3><img src='readmeAssets/valve_tab.png' width='300'></blockquote></details>
-`page` | <span id='glossary-page'></span>a set of HTML elements that is shown when a tab is selected, denoated in the HTML by a container: `<div id='page-PAGE_NAME'>`<br>Every model has one page<details><summary>Example</summary><blockquote><h3>Page 1</h3><img src='readmeAssets/solarpanel_page.png' width='300'><br><h3>Page 2</h3><img src='readmeAssets/valve_page.png' width='300'></blockquote></details>
+`tab` | <span id='glossary-tab'></span>a tab on the navigation bar<details open><summary>Example</summary><blockquote><h3>Tab 1</h3><img src='readmeAssets/solarpanel_tab.png' width='300'><br><h3>Tab 2</h3><img src='readmeAssets/valve_tab.png' width='300'></blockquote></details>
+`page` | <span id='glossary-page'></span>a set of HTML elements that is shown when a tab is selected, denoated in the HTML by a container: `<div id='page-PAGE_NAME'>`<br>Every model has one page<details open><summary>Example</summary><blockquote><h3>Page 1</h3><img src='readmeAssets/solarpanel_page.png' width='300'><br><h3>Page 2</h3><img src='readmeAssets/valve_page.png' width='300'></blockquote></details>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

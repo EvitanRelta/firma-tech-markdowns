@@ -37,18 +37,18 @@ Steps:
 
 2. Go to https://console.cloud.google.com
 
-3. On the top navigation bar, select the project that has the deployed models <details><summary>Image</summary><blockquote><img src='readmeAssets/getCredentials_selectProject1.png' width='600'><hr><img src='readmeAssets/getCredentials_selectProject2.png' width='600'></blockquote></details>
+3. On the top navigation bar, select the project that has the deployed models <details open><summary>Image</summary><blockquote><img src='readmeAssets/getCredentials_selectProject1.png' width='600'><hr><img src='readmeAssets/getCredentials_selectProject2.png' width='600'></blockquote></details>
 
-4. Open the top-left menu, and navigate to `IAM & admin` **>** `Roles` **>** `CREATE ROLE` <details><summary>Image</summary><blockquote><img src='readmeAssets/getCredentials_toRoles.png' width='600'><hr><img src='readmeAssets/getCredentials_createRole.png' width='600'></blockquote></details>
+4. Open the top-left menu, and navigate to `IAM & admin` **>** `Roles` **>** `CREATE ROLE` <details open><summary>Image</summary><blockquote><img src='readmeAssets/getCredentials_toRoles.png' width='600'><hr><img src='readmeAssets/getCredentials_createRole.png' width='600'></blockquote></details>
 
-5. <span id='readme-permissions'></span>Click `ADD PERMISSIONS`, search for "model user", select `ML Engine Model User`, and add the permissions: `ml.models.predict` and `ml.versions.predict` <br>_(this will grant the credentials permissions to only request for predictions)_<details><summary>Image</summary><blockquote><img src='readmeAssets/getCredentials_addPermissions1.png' width='600'><hr><img src='readmeAssets/getCredentials_addPermissions2.png' width='600'><hr><img src='readmeAssets/getCredentials_addPermissions3.png' width='600'><hr><img src='readmeAssets/getCredentials_addPermissions4.png' width='600'></blockquote></details>
+5. <span id='readme-permissions'></span>Click `ADD PERMISSIONS`, search for "model user", select `ML Engine Model User`, and add the permissions: `ml.models.predict` and `ml.versions.predict` <br>_(this will grant the credentials permissions to only request for predictions)_<details open><summary>Image</summary><blockquote><img src='readmeAssets/getCredentials_addPermissions1.png' width='600'><hr><img src='readmeAssets/getCredentials_addPermissions2.png' width='600'><hr><img src='readmeAssets/getCredentials_addPermissions3.png' width='600'><hr><img src='readmeAssets/getCredentials_addPermissions4.png' width='600'></blockquote></details>
 
 6. Fill in the other required details, then create the service account
 
-7. Open the top-left menu, and navigate to `APIs & Services` **>** `Credentials` **>** `Create credentials` **>** `Service account key` <details><summary>Image</summary><blockquote><img src='readmeAssets/getCredentials_toCredentials.png' width='600'><hr><img src='readmeAssets/getCredentials_toCreateCredentials.png' width='600'></blockquote></details> 
+7. Open the top-left menu, and navigate to `APIs & Services` **>** `Credentials` **>** `Create credentials` **>** `Service account key` <details open><summary>Image</summary><blockquote><img src='readmeAssets/getCredentials_toCredentials.png' width='600'><hr><img src='readmeAssets/getCredentials_toCreateCredentials.png' width='600'></blockquote></details> 
 
 
-8. <ul><li>under <code>Service account</code>, select <code>New service account</code></li><li>select the custom role you just made</li><li>fill in the other required details</li><li>select JSON key type</li><li>then click <code>Create</code></li></ul> <details><summary>Images</summary><blockquote><img src='readmeAssets/getCredentials_createCredentials1.png' width='600'><hr><img src='readmeAssets/getCredentials_createCredentials2.png' width='600'><hr><img src='readmeAssets/getCredentials_createCredentials3.png' width='600'></blockquote></details>
+8. <ul><li>under <code>Service account</code>, select <code>New service account</code></li><li>select the custom role you just made</li><li>fill in the other required details</li><li>select JSON key type</li><li>then click <code>Create</code></li></ul> <details open><summary>Images</summary><blockquote><img src='readmeAssets/getCredentials_createCredentials1.png' width='600'><hr><img src='readmeAssets/getCredentials_createCredentials2.png' width='600'><hr><img src='readmeAssets/getCredentials_createCredentials3.png' width='600'></blockquote></details>
 <br>
 
 ## Step 2: Configuration <sup>[_(back to Contents)_](#Table-of-Contents)</sup>

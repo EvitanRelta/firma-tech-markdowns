@@ -196,7 +196,7 @@ Right-click the desired layer, and select `Duplicate current layer`
 
 2. right-click the layer 
 
-3. select `Move select faces/vertices to another layer`<details><summary>Image</summary><img src='markdown_assets\meshlab\LAYERCONTROL_move_to_new_layer.png' width='300'></details>
+3. select `Move select faces/vertices to another layer`<details open><summary>Image</summary><img src='markdown_assets\meshlab\LAYERCONTROL_move_to_new_layer.png' width='300'></details>
 
 4. **_(Optional)_** If you want to copy to new layer instead of moving, uncheck `Delete original selection`
 
@@ -253,7 +253,7 @@ After clicking, most of the top-bar icons should be grayed out like this
 
 **To move/rotate the camera:** click on the trackball icon <img src='markdown_assets\meshlab\SELECTION_trackball_icon.png' height='30'> or press `Esc`
 
-<details>
+<details open>
   <summary>Which will display the trackball</summary>
   <img src='markdown_assets\meshlab\SELECTION_trackball_show.png' height='500'>
 </details>
@@ -262,14 +262,14 @@ After clicking, most of the top-bar icons should be grayed out like this
 
 **To go back to selecting:** click on the `Select vertexes/face/connected components` icon <img src='markdown_assets\meshlab\SELECTION_selection_icons.png' height='30'> again, or press `Esc`. 
 
-<details>
+<details open>
   <summary>Which will hide the trackball</summary>
   <img src='markdown_assets\meshlab\SELECTION_trackball_hide.png' height='500'>
 </details>
 
 <br>
 
-> **Note:** the red-highlighting of selected points might not be visible (or barely visible) at small point sizes.<details><summary>GIF</summary>As show in the GIF, at small point sizes, the red-highlight is barely visible. So you might need to increase point size to see them.<br><br><img src='markdown_assets\meshlab\SELECTION_pointsize_redcolor.gif' height='500'></details>
+> **Note:** the red-highlighting of selected points might not be visible (or barely visible) at small point sizes.<details open><summary>GIF</summary>As show in the GIF, at small point sizes, the red-highlight is barely visible. So you might need to increase point size to see them.<br><br><img src='markdown_assets\meshlab\SELECTION_pointsize_redcolor.gif' height='500'></details>
 
 <br>
 <hr>
@@ -357,7 +357,7 @@ Computing the normals for a pointcloud is quite easy:
 ### HOWEVER, here's the problem <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 Sometimes, computed normals points in the opposite direction of what you want.
 
-<details>
+<details open>
   <summary>Example images</summary>
   Here's an image of the pointcloud of a floor.
   <br>Notice how some of the normals are pointing downwards instead of up.
@@ -380,7 +380,7 @@ Sometimes, computed normals points in the opposite direction of what you want.
 
 This can cause problems during meshing, resulting in malformed meshes.
 
-<details>
+<details open>
   <summary>Example images</summary>
   Here's an image of the pointcloud of a floor, where the dark yellow points are pointing the wrong way.
   <br><img src='markdown_assets\meshlab\NORMALS_computing_2.png' width='600'>
@@ -403,13 +403,13 @@ One such situation is when the rendering engine uses [back-face culling](https:/
 ### To fix the above problem <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 - For a simple model, that only has a single plane, like a wall or floor:
 
-  1. look at the pointcloud/mesh in the direction opposing the normal vector direction that you want. (eg. for a floor mesh, look at it from a bird's-eye view, as you want the normals to point up)<details><summary>Example image</summary>Bird's-eye view of the pointcloud of a floor.<br><img src='markdown_assets\meshlab\NORMALS_flipping_method1_1.png' width='600'></details><br>Zoom out so that the pointcloud/mesh looks far away from you ([reason](#why-the-view-point-must-be-far-away))<details><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_2.png' width='600'></details>
+  1. look at the pointcloud/mesh in the direction opposing the normal vector direction that you want. (eg. for a floor mesh, look at it from a bird's-eye view, as you want the normals to point up)<details open><summary>Example image</summary>Bird's-eye view of the pointcloud of a floor.<br><img src='markdown_assets\meshlab\NORMALS_flipping_method1_1.png' width='600'></details><br>Zoom out so that the pointcloud/mesh looks far away from you ([reason](#why-the-view-point-must-be-far-away))<details open><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_2.png' width='600'></details>
 
   2. select `Filters > Normals, Curvatures and Orientation > Compute normals for point sets`
 
   3. set desired `Neighbour num`
 
-  4. under `Viewpoint Pos.`, in the `Get` drop down list, select `View Pos.`<details><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_3.png' width='350'></details>
+  4. under `Viewpoint Pos.`, in the `Get` drop down list, select `View Pos.`<details open><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_3.png' width='350'></details>
 
   5. check the `Flip normals w.r.t. viewpoint` option
 
@@ -423,7 +423,7 @@ One such situation is when the rendering engine uses [back-face culling](https:/
 
   - you'll have to first compute the normals with the `Flip normals w.r.t. viewpoint` option **unchecked**
 
-  - then by using multiple different view-points / view-directions, you'll need to flip the wrongly faced points using the method described in the [`Flipping normals for pointcloud`](#flipping-normals-for-pointcloud-back-to-contents) section below<details><summary>Example image</summary>Here's the cross-section of a column / pillar.<br>Notice how some points' normals are facing inwards instead of outwards.<br><img src='markdown_assets\meshlab\NORMALS_computing_4.png' width='350'><br><br>To flip the inward-facing normals using the [`Flipping normals for pointcloud`](#flipping-normals-for-pointcloud-back-to-contents) methods, at least 2 viewpoints are needed as shown.<br>To understand why, read up about how this works [here](#how-the-3-selection-methods-works-back-to-contents).<br><img src='markdown_assets\meshlab\NORMALS_computing_5.png' width='500'></details>
+  - then by using multiple different view-points / view-directions, you'll need to flip the wrongly faced points using the method described in the [`Flipping normals for pointcloud`](#flipping-normals-for-pointcloud-back-to-contents) section below<details open><summary>Example image</summary>Here's the cross-section of a column / pillar.<br>Notice how some points' normals are facing inwards instead of outwards.<br><img src='markdown_assets\meshlab\NORMALS_computing_4.png' width='350'><br><br>To flip the inward-facing normals using the [`Flipping normals for pointcloud`](#flipping-normals-for-pointcloud-back-to-contents) methods, at least 2 viewpoints are needed as shown.<br>To understand why, read up about how this works [here](#how-the-3-selection-methods-works-back-to-contents).<br><img src='markdown_assets\meshlab\NORMALS_computing_5.png' width='500'></details>
 
 <br>
 <hr>
@@ -433,7 +433,7 @@ One such situation is when the rendering engine uses [back-face culling](https:/
 ### Method 1 <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 To get a rough visualisation of the normals
 1. change color of the points/faces to a either `Mesh` or `User-defined`
-2. change shading of the points/faces to `Vert`<details><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_vert_shading1.png' height='200'></details>
+2. change shading of the points/faces to `Vert`<details open><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_vert_shading1.png' height='200'></details>
 
 This will make the points/faces (with normals that are pointing towards you) darker. 
 
@@ -443,7 +443,7 @@ Useful for finding outliers with normals that are facing the wrong way.
 
 <br>
 
-<details>
+<details open>
   <summary>Image</summary>
   The lighter-colored gray points have normals pointing towards me. The almost-black darker ones are pointing away from me.
   <br>
@@ -459,9 +459,9 @@ Useful for finding outliers with normals that are facing the wrong way.
 To see normals vectors:
 1. select `Render > Show normals`
 
-2. if you don't see blue-purple lines like this:<details><summary>Image</summary><img src='markdown_assets\meshlab\NORMALS_method2_1.png' height='300'></details>go to the bottom right panel and check `Per Vertex/Face`<details><summary>Image</summary><img src='markdown_assets\meshlab\NORMALS_method2_2.png' height='150'></details>
+2. if you don't see blue-purple lines like this:<details open><summary>Image</summary><img src='markdown_assets\meshlab\NORMALS_method2_1.png' height='300'></details>go to the bottom right panel and check `Per Vertex/Face`<details open><summary>Image</summary><img src='markdown_assets\meshlab\NORMALS_method2_2.png' height='150'></details>
 
-3. **_(Optional)_** If the normals are too long or short, go to the bottom right panel and increase/decrease `Vector length`<details><summary>Image</summary><img src='markdown_assets\meshlab\NORMALS_method2_2.png' height='150'></details>
+3. **_(Optional)_** If the normals are too long or short, go to the bottom right panel and increase/decrease `Vector length`<details open><summary>Image</summary><img src='markdown_assets\meshlab\NORMALS_method2_2.png' height='150'></details>
 
 <br>
 
@@ -474,7 +474,7 @@ To see normals vectors:
 ## Flipping normals for pointcloud <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 Sometimes, computed normals points in the opposite direction of what you want.
 
-<details>
+<details open>
   <summary>Example image</summary>
   In the image below, there are some normals pointing downwards instead of up.
   <br>
@@ -493,29 +493,29 @@ To select the points that are pointing the wrong direction:
 
   - <span id='method-1--by-view-position'></span>**Method 1 - by view position** <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
   
-  1. look at the pointcloud/mesh in the direction opposing the normal vector direction that you want. (eg. for a floor mesh, look at it from a bird's-eye view, as you want the normals to point up)<details><summary>Example image</summary>This is a bird's-eye view of a pointcloud of a floor.<br>The dark gray points have normals facing downwards instead of upwards.<br><img src='markdown_assets\meshlab\NORMALS_flipping_method1_1.png' width='600'></details><br>Zoom out so that the pointcloud/mesh looks far away from you ([reason](#why-the-view-point-must-be-far-away))<details><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_2.png' width='600'></details>
+  1. look at the pointcloud/mesh in the direction opposing the normal vector direction that you want. (eg. for a floor mesh, look at it from a bird's-eye view, as you want the normals to point up)<details open><summary>Example image</summary>This is a bird's-eye view of a pointcloud of a floor.<br>The dark gray points have normals facing downwards instead of upwards.<br><img src='markdown_assets\meshlab\NORMALS_flipping_method1_1.png' width='600'></details><br>Zoom out so that the pointcloud/mesh looks far away from you ([reason](#why-the-view-point-must-be-far-away))<details open><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_2.png' width='600'></details>
 
   2. select `Filters > Normals, Curvatures and Orientation > Compute normals for point sets`
 
-  3. under `Viewpoint Pos.`, in the `Get` drop down list, select `View Pos.`<details><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_3.png' width='350'></details>
+  3. under `Viewpoint Pos.`, in the `Get` drop down list, select `View Pos.`<details open><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_3.png' width='350'></details>
 
-  4. using notepad (or any other text program), replace the `cx`, `cy`, `cz` in the code below, with the xyz coordinates from the `Viewpoint Pos.` in `Step 3`<pre>vsel && (acos((nx * (cx - x) + ny * (cy - y) + nz * (cz - z)) / (sqrt((cx - x) * (cx - x) + (cy - y) * (cy - y) + (cz - z) * (cz - z)))) > 3.14159265/2.0)</pre>  <details><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_4.png' width='700'><hr><img src='markdown_assets\meshlab\NORMALS_flipping_method1_5.png' width='700'></details>
+  4. using notepad (or any other text program), replace the `cx`, `cy`, `cz` in the code below, with the xyz coordinates from the `Viewpoint Pos.` in `Step 3`<pre>vsel && (acos((nx * (cx - x) + ny * (cy - y) + nz * (cz - z)) / (sqrt((cx - x) * (cx - x) + (cy - y) * (cy - y) + (cz - z) * (cz - z)))) > 3.14159265/2.0)</pre>  <details open><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_4.png' width='700'><hr><img src='markdown_assets\meshlab\NORMALS_flipping_method1_5.png' width='700'></details>
 
-  5. select the affected region. The operation will only pick points from the selected points<details><summary>Example image</summary>You can select only part of the pointcloud like this:<br><img src='markdown_assets\meshlab\NORMALS_flipping_method1_12.png' width='600'><br>Or the entire pointcloud like this:<br><img src='markdown_assets\meshlab\NORMALS_flipping_method1_13.png' width='600'></details>
+  5. select the affected region. The operation will only pick points from the selected points<details open><summary>Example image</summary>You can select only part of the pointcloud like this:<br><img src='markdown_assets\meshlab\NORMALS_flipping_method1_12.png' width='600'><br>Or the entire pointcloud like this:<br><img src='markdown_assets\meshlab\NORMALS_flipping_method1_13.png' width='600'></details>
 
   6. select `Filters > Selection > Conditional Vertex Selection`
 
-  7. copy the modified code in `Step 4` into the `boolean function` input, and apply.<details><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_6.png' width='300'></details><br>This will select all the wrong-facing points from the points selected in `Step 5`<details><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_7.png' width='600'></details>
+  7. copy the modified code in `Step 4` into the `boolean function` input, and apply.<details open><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_6.png' width='300'></details><br>This will select all the wrong-facing points from the points selected in `Step 5`<details open><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_7.png' width='600'></details>
 
 <br><br>
 
 - 
   - <span id='method-2--by-trackball'></span>**Method 2 - by trackball** <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 
-  1. by holding the middle-mouse-button (MMB), position the trackball center far away in the direction of the normals you want (eg. if you want the normals to point up, put the trackball far above the points)<details><summary>Example image</summary>This is a pointcloud of a floor, with the purple normal vectors pointing upwards towards the trackball center.<br><br>The trackball is place far above the pointcloud.<br><img src='markdown_assets\meshlab\NORMALS_flipping_method2_1.png' width='600'></details>
+  1. by holding the middle-mouse-button (MMB), position the trackball center far away in the direction of the normals you want (eg. if you want the normals to point up, put the trackball far above the points)<details open><summary>Example image</summary>This is a pointcloud of a floor, with the purple normal vectors pointing upwards towards the trackball center.<br><br>The trackball is place far above the pointcloud.<br><img src='markdown_assets\meshlab\NORMALS_flipping_method2_1.png' width='600'></details>
   2. select `Filters > Normals, Curvatures and Orientation > Compute normals for point sets`
 
-  3. under `Viewpoint Pos.`, in the `Get` drop down list, select `Trackball Center`<details><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method2_2.png' width='350'></details>
+  3. under `Viewpoint Pos.`, in the `Get` drop down list, select `Trackball Center`<details open><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method2_2.png' width='350'></details>
   
   4. Follow the steps from **`Method 1 - by view position`** starting `Step 4`
 
@@ -524,18 +524,18 @@ To select the points that are pointing the wrong direction:
 - 
   - <span id='method-3--by-view-direction'></span>**Method 3 - by view direction** <sup>[_(back to Contents)_](#Table-of-Contents)</sup>
 
-  1. look in the direction opposing the normal vector direction that you want (eg. if you want the normals to point up, look downwards) (this doesn't depend on your position, only your view direction)<details><summary>Example image</summary>This is a pointcloud of a floor, with the purple normal vectors pointing upwards.<br><br>So I'm looking downwards.<br><img src='markdown_assets\meshlab\NORMALS_flipping_method3_1.png' width='600'></details>
+  1. look in the direction opposing the normal vector direction that you want (eg. if you want the normals to point up, look downwards) (this doesn't depend on your position, only your view direction)<details open><summary>Example image</summary>This is a pointcloud of a floor, with the purple normal vectors pointing upwards.<br><br>So I'm looking downwards.<br><img src='markdown_assets\meshlab\NORMALS_flipping_method3_1.png' width='600'></details>
   2. select `Filters > Normals, Curvatures and Orientation > Compute normals for point sets`
 
-  3. under `Viewpoint Pos.`, in the `Get` drop down list, select something besides `View Dir.` first, then select `View Dir.`. (else it won't update the `Viewpoint Pos.` coords)<br><br>Ensure the `Viewpoint Pos.` coord isn't `0, 0, 0`<details><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method3_2.png' width='350'></details>
+  3. under `Viewpoint Pos.`, in the `Get` drop down list, select something besides `View Dir.` first, then select `View Dir.`. (else it won't update the `Viewpoint Pos.` coords)<br><br>Ensure the `Viewpoint Pos.` coord isn't `0, 0, 0`<details open><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method3_2.png' width='350'></details>
   
-  4. using notepad (or any other text program), replace the `vdx`, `vdy`, `vdz` in the code below, with the xyz coordinates from the `Viewpoint Pos.` in `Step 3`<pre>vsel && (acos((nx * vdx + ny * vdy + nz * vdz) / (sqrt(vdx * vdx + vdy * vdy + vdz * vdz))) > 3.14159265/2.0)</pre>  <details><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method3_3.png' width='700'><hr><img src='markdown_assets\meshlab\NORMALS_flipping_method3_4.png' width='700'></details>
+  4. using notepad (or any other text program), replace the `vdx`, `vdy`, `vdz` in the code below, with the xyz coordinates from the `Viewpoint Pos.` in `Step 3`<pre>vsel && (acos((nx * vdx + ny * vdy + nz * vdz) / (sqrt(vdx * vdx + vdy * vdy + vdz * vdz))) > 3.14159265/2.0)</pre>  <details open><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method3_3.png' width='700'><hr><img src='markdown_assets\meshlab\NORMALS_flipping_method3_4.png' width='700'></details>
 
-  5. select the affected region. The operation will only pick points from the selected points<details><summary>Example image</summary>You can select only part of the pointcloud like this:<br><img src='markdown_assets\meshlab\NORMALS_flipping_method1_12.png' width='600'><br>Or the entire pointcloud like this:<br><img src='markdown_assets\meshlab\NORMALS_flipping_method1_13.png' width='600'></details>
+  5. select the affected region. The operation will only pick points from the selected points<details open><summary>Example image</summary>You can select only part of the pointcloud like this:<br><img src='markdown_assets\meshlab\NORMALS_flipping_method1_12.png' width='600'><br>Or the entire pointcloud like this:<br><img src='markdown_assets\meshlab\NORMALS_flipping_method1_13.png' width='600'></details>
 
   6. select `Filters > Selection > Conditional Vertex Selection`
 
-  7. copy the modified code in `Step 4` into the `boolean function` input, and apply.<details><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method3_5.png' width='300'></details><br>This will select all the wrong-facing points from the points selected in `Step 5`<details><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_7.png' width='600'></details>
+  7. copy the modified code in `Step 4` into the `boolean function` input, and apply.<details open><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method3_5.png' width='300'></details><br>This will select all the wrong-facing points from the points selected in `Step 5`<details open><summary>Example image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_method1_7.png' width='600'></details>
 
 <br><br>
 
@@ -543,7 +543,7 @@ To select the points that are pointing the wrong direction:
 
 1. select `Normals, Curvatures, Orientation > Per Vertex Normal Function`
 
-2. leave the functions as default, and check `only on selection`<details><summary>Image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_flip.png' width='350'></details>
+2. leave the functions as default, and check `only on selection`<details open><summary>Image</summary><img src='markdown_assets\meshlab\NORMALS_flipping_flip.png' width='350'></details>
 
 4. `Apply`
 
@@ -616,11 +616,11 @@ Notice how the mesh extents further than the pointcloud.
 
 - or you can select the based on the face size like this:
 
-    1. select `Filters > Selection > Select Faces with edges longer than...`.<details><summary>Image</summary><img src='markdown_assets\meshlab\MESHING_cleaning_1.png' width='300'></details>
+    1. select `Filters > Selection > Select Faces with edges longer than...`.<details open><summary>Image</summary><img src='markdown_assets\meshlab\MESHING_cleaning_1.png' width='300'></details>
 
     2. check the `Preview` option
 
-    3. keep tweaking the `Edge Threshold` value until it selects as much of the excess faces , but none of the faces in the area that you want to keep<details><summary>Image</summary><img src='markdown_assets\meshlab\MESHING_cleaning_2.png' width='800'></details>
+    3. keep tweaking the `Edge Threshold` value until it selects as much of the excess faces , but none of the faces in the area that you want to keep<details open><summary>Image</summary><img src='markdown_assets\meshlab\MESHING_cleaning_2.png' width='800'></details>
     
     4. `Apply`
 
@@ -650,11 +650,11 @@ you can fill / close them up by:
 
 1. select `Filters > Remeshing, Simplification and Reconstruction > Close Holes`
 
-2. **(if you want close specific holes)** select the faces around the hole, and check `Close holes with selected faces`<details><summary>Image</summary><img src='markdown_assets\meshlab\MESHING_cleaning_6.png' width='700'></details>
+2. **(if you want close specific holes)** select the faces around the hole, and check `Close holes with selected faces`<details open><summary>Image</summary><img src='markdown_assets\meshlab\MESHING_cleaning_6.png' width='700'></details>
 
 3. set desired `Max size to be close` (you'll need to experiment with this to find the right value)
 
-4. `Apply`<details><summary>Result image</summary><img src='markdown_assets\meshlab\MESHING_cleaning_7.png' width='700'></details>
+4. `Apply`<details open><summary>Result image</summary><img src='markdown_assets\meshlab\MESHING_cleaning_7.png' width='700'></details>
 
 <br>
 <hr>
