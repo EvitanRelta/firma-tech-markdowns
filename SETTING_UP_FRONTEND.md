@@ -26,7 +26,7 @@
 > - [Dependencies](#Dependencies-back-to-contents)
 > - [Author](#Author-back-to-contents)
 
-> [Go to **documentation**](DOCUMENTATION.md)
+> [Go to **documentation**](FRONTEND_DOCUMENTATION.md)
 
 <br>
 
@@ -62,7 +62,7 @@ In the `configs` folder, edit the `CONFIG_credentials.js` and `CONFIG_modelInfo.
 This contains the Google Cloud credentials used to get the predictions from Google Cloud ML.
 
 `scope` _(probably)_ should always be the same, so leave it alone.
-<br>Change `clientEmail`, `clientId`, `apiKey` and `privateKey` to that of your Google Cloud credential, and ensure that those credentials have access to request predictions from Google Cloud ML. _(more details in [documentation — CONFIG_credentials.js](DOCUMENTATION.md#config_credentialsjs-back-to-contents))_
+<br>Change `clientEmail`, `clientId`, `apiKey` and `privateKey` to that of your Google Cloud credential, and ensure that those credentials have access to request predictions from Google Cloud ML. _(more details in [documentation — CONFIG_credentials.js](FRONTEND_DOCUMENTATION.md#config_credentialsjs-back-to-contents))_
 
 <br>
 
@@ -103,4 +103,4 @@ It does, however, rely on a [_modified_ CORS-Anywhere proxy](https://github.com/
 <br>
 
 
-> [Go to **documentation**](DOCUMENTATION.md)
+> [Go to **documentation**](FRONTEND_DOCUMENTATION.md)

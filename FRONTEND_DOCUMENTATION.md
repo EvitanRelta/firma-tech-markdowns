@@ -161,9 +161,9 @@ Example:
 ## `CONFIG_credentials.js` <sup><sup>[_(back to Contents)_](#Table-of-Contents)</sup></sup>
 > Contains the const `credentials` (type:`dict`), which contains the Google Cloud credentials.
 
-This project requires the credentials of a service account that has permissions to request for predictions. _(specifically `ml.models.predict` and `ml.versions.predict` as documented in [README.md — Setting up > Step 1: Getting Google Cloud credentials](README.md#readme-permissions))_
+This project requires the credentials of a service account that has permissions to request for predictions. _(specifically `ml.models.predict` and `ml.versions.predict` as documented in [SETTING_UP_FRONTEND.md — Setting up > Step 1: Getting Google Cloud credentials](SETTING_UP_FRONTEND.md#readme-permissions))_
 <br>Credentials can be obtained via: <a href='https://console.cloud.google.com/apis/credentials'>https://console.cloud.google.com/apis/credentials</a>
-<br>[(Detailed instructions found in `README.md`)](README.md#Step-1-Getting-Google-Cloud-credentials-back-to-contents)
+<br>[(Detailed instructions found in `SETTING_UP_FRONTEND.md`)](SETTING_UP_FRONTEND.md#Step-1-Getting-Google-Cloud-credentials-back-to-contents)
 
 The generated credentials JSON file will look something like this:<br>
 ```
@@ -340,7 +340,7 @@ The modified CORS-Anywhere proxy is used to bypass CORS-restrictions, and to all
 
 Refer to [googleApiFunctions.js > getPrediction > sendPayload](#corsproxy-usage) for info on how its used.
 
-Refer to [README.md — Setting up > Step 3: Hosting the website](README.md#Step-3-Hosting-the-website-back-to-contents) TODOcheckIfWorks for info on how to set up a new proxy, should the current proxy go down.
+Refer to [SETTING_UP_FRONTEND.md — Setting up > Step 3: Hosting the website](SETTING_UP_FRONTEND.md#Step-3-Hosting-the-website-back-to-contents) TODOcheckIfWorks for info on how to set up a new proxy, should the current proxy go down.
 
 <br>
 <hr>
