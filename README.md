@@ -1,8 +1,8 @@
 # My markdowns for Firma Technologies
 
-Here's all the documentation markdowns during my internship at Firma Technologies.
+Here's all the documentation markdowns during my **Firma Technologies** internship.
 
-Due to the company's confidentiality policy, I'm only able to public share the following files/repositories.
+Due to company confidentiality policy, I'm only able to publicly share the following files/repositories.
 
 <br>
 
@@ -10,13 +10,13 @@ Due to the company's confidentiality policy, I'm only able to public share the f
 
 - [Documentation for Meshlab](MESHLAB_DOCUMENTATION.md), an open source point cloud / 3D meshing software
 
-- Documentation for [setting up our static frontend](SETTING_UP_FRONTEND.md) and for [all its files and functions](FRONTEND_DOCUMENTATION.md)
+- Documentation for [setting up our static frontend](SETTING_UP_FRONTEND.md) and for all its [files and functions](FRONTEND_DOCUMENTATION.md)
 
 <br><br>
 
 ## Related repositories
 
-Public repositories for libraries I worked on for my internship.
+Public repositories for libraries I worked on during my internship.
 
 <br>
 
@@ -34,7 +34,7 @@ It's modified to escape [forbidden headers](https://fetch.spec.whatwg.org/#forbi
  -User-Agent  : 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36'
 ```
 
-It was used to spoof Google Cloud ML into accept a prediction request from an unauthorised website during my internship.
+It was used to spoof Google Cloud ML into accepting a prediction request from an unauthorised website during my internship.
 
 <br>
 
